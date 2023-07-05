@@ -8,8 +8,8 @@
             "name": "Embedded Debug",
             "type": "embedded-debug",
             "request": "launch",
-            "serialNumber": "${command:device-manager.getSerialNumber}",
             "program": "${command:embedded-debug.getApplicationFile}",
+            "serialNumber": "${command:device-manager.getSerialNumber}",
             "cmsisPack": "${command:device-manager.getDevicePack}",
             "debugFrom": "main"
         }

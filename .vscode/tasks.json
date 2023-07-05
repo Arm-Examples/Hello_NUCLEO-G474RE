@@ -17,10 +17,11 @@
 		{
 			"label": "Flash Device",
 			"type": "embedded-debug.flash",
-			"serialNumber": "${command:device-manager.getSerialNumber}",
 			"program": "${command:embedded-debug.getApplicationFile}",
+			"serialNumber": "${command:device-manager.getSerialNumber}",
 			"cmsisPack": "${command:device-manager.getDevicePack}",
-			"problemMatcher": []
+			"problemMatcher": [],
+			"dependsOn": "CMSIS Build"
 		}
 	]
 }
