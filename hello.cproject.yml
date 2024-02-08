@@ -17,22 +17,23 @@ project:
         - file: retarget_stdio.c
 
   linker:
-    - script:  RTE/Device/STM32G474RETx/stm32g474.sct
+    - script: RTE/Device/STM32G474RETx/stm32g474.sct
       for-compiler: AC6
 
   components:
     - component: CMSIS:CORE
     - component: CMSIS:RTOS2:Keil RTX5&Source
 
-    - component: CMSIS-Compiler:I/O:STDOUT&User
-
     - component: Device&STM32CubeMX:Startup
 
     - component: Keil::Device&STM32CubeMX:STM32Cube Framework:STM32CubeMX
 
     - component: Keil::Device&STM32CubeMX:STM32Cube HAL
+    - component: ARM::CMSIS:OS Tick:SysTick
 
   output:
     type:
       - elf
       - hex
+  packs:
+    - pack: ARM::CMSIS@6.0.0

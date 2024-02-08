@@ -4,10 +4,10 @@ solution:
   compiler: AC6
 
   packs:
-    - pack: ARM::CMSIS@5.9.0
-    - pack: ARM::CMSIS-Compiler@1.0.0
-    - pack: Keil::STM32G4xx_DFP@1.5.0
-    - pack: Keil::NUCLEO-G474RE_BSP@1.0.0
+    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS-RTX
+    - pack: Keil::STM32G4xx_DFP
+    - pack: Keil::NUCLEO-G474RE_BSP
 
   target-types:
     - type: NUCLEO-G474RE
