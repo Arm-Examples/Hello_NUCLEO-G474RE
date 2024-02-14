@@ -4,8 +4,9 @@ solution:
   compiler: AC6
 
   packs:
-    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS@>=6.0.0
     - pack: ARM::CMSIS-RTX
+    - pack: ARM::CMSIS-Compiler
     - pack: Keil::STM32G4xx_DFP
     - pack: Keil::NUCLEO-G474RE_BSP
 
