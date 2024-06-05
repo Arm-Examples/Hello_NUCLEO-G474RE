@@ -5,13 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Embedded Debug",
-            "type": "embedded-debug",
+            "name": "Arm Debugger",
+            "type": "arm-debugger",
             "request": "launch",
-            "program": "${command:embedded-debug.getApplicationFile}",
             "serialNumber": "${command:device-manager.getSerialNumber}",
-            "cmsisPack": "${command:device-manager.getDevicePack}",
-            "debugFrom": "main"
+            "program": "${command:arm-debugger.getApplicationFile}",
+            "cmsisPack": "${command:cmsis-csolution.getTargetPack}",
+            "deviceName": "${command:cmsis-csolution.getDeviceName}",
+            "processorName": "${command:cmsis-csolution.getProcessorName}"
         }
     ]
 }

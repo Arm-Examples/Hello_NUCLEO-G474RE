@@ -1,0 +1,18 @@
+cbuild-pack:
+  resolved-packs:
+    - resolved-pack: ARM::CMSIS@6.0.0
+      selected-by-pack:
+        - ARM::CMSIS
+        - ARM::CMSIS@6.0.0
+    - resolved-pack: ARM::CMSIS-Compiler@2.0.0
+      selected-by-pack:
+        - ARM::CMSIS-Compiler
+    - resolved-pack: ARM::CMSIS-RTX@5.8.0
+      selected-by-pack:
+        - ARM::CMSIS-RTX
+    - resolved-pack: Keil::NUCLEO-G474RE_BSP@1.0.0
+      selected-by-pack:
+        - Keil::NUCLEO-G474RE_BSP
+    - resolved-pack: Keil::STM32G4xx_DFP@1.5.0
+      selected-by-pack:
+        - Keil::STM32G4xx_DFP

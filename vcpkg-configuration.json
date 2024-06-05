@@ -10,7 +10,6 @@
     "arm:tools/kitware/cmake": "^3.25.2",
     "arm:tools/ninja-build/ninja": "^1.10.2",
     "arm:tools/open-cmsis-pack/cmsis-toolbox": "^2.2.0-0",
-    "arm:compilers/arm/arm-none-eabi-gcc": "^12.2.1-0",
     "arm:compilers/arm/armclang": "^6.21.0",
     "arm:debuggers/arm/armdbg": "*"
   }
