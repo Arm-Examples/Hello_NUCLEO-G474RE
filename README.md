@@ -1,4 +1,5 @@
 # Hello example for NUCLEO-G474RE
+[![CMSIS Compliance](https://img.shields.io/github/actions/workflow/status/Arm-Examples/Hello_NUCLEO-G474RE/verify.yml?logo=arm&logoColor=0091bd&label=CMSIS%20Compliance)](https://www.keil.arm.com/cmsis) 
 
 Simple Hello World example for STMicroelectronics [**NUCLEO-G474RE**](https://www.st.com/en/evaluation-tools/nucleo-g474re.html) development board.
 This example prints "Hello World" and a counter value via the standard output which is routed to the debug console through Virtual COM port.
