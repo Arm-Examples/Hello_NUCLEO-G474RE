@@ -1,0 +1,30 @@
+name: Build example
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # https://github.com/ARM-software/cmsis-actions
+      - name: Activate vcpkg
+        uses: ARM-software/cmsis-actions/vcpkg@v1
+        with: 
+          config: "./vcpkg-configuration.json"
+
+      # https://github.com/ARM-software/cmsis-actions
+      - name: Activate Arm tool license
+        uses: ARM-software/cmsis-actions/armlm@v1
+
+      # Build the release and debug executable for the AC6 compiler
+      - name: Build release and debug executable
+        run: |
+          cbuild hello.csolution.yml --packs --context .+NUCLEO-G474RE --rebuild

@@ -1,0 +1,43 @@
+default:
+
+  misc:
+    - for-compiler: AC6
+
+      C-CPP:
+        - -fno-common  -fdata-sections  -ffreestanding  -fno-builtin  -mthumb
+        - -fno-rtti
+        - -funsigned-char
+        - -fshort-enums
+        - -fshort-wchar
+        - -ffunction-sections
+        - -std=c99
+        - -Wno-packed
+        - -Wno-missing-variable-declarations
+        - -Wno-missing-prototypes
+        - -Wno-missing-noreturn
+        - -Wno-sign-conversion
+        - -Wno-nonportable-include-path
+        - -Wno-reserved-id-macro
+        - -Wno-unused-macros
+        - -Wno-documentation-unknown-command
+        - -Wno-documentation
+        - -Wno-license-management
+        - -Wno-parentheses-equality
+      ASM:
+        - -masm=auto
+      Link:
+        - --map
+        - --load_addr_map_info
+        - --xref
+        - --callgraph
+        - --symbols
+        - --info sizes
+        - --info totals
+        - --info unused
+        - --info veneers
+        - --list
+        - --remove --entry=Reset_Handler
+        - --strict
+        - --diag_suppress 6314
+        - --summary_stderr
+        - --info summarysizes
