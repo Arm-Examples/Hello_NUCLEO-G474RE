@@ -23,6 +23,11 @@ default:
         - -Wno-documentation
         - -Wno-license-management
         - -Wno-parentheses-equality
+      C:
+        - -std=c99
+      CPP:
+        - -xc++
+        - -std=c++11
       ASM:
         - -masm=auto
       Link:
@@ -36,8 +41,10 @@ default:
         - --info unused
         - --info veneers
         - --list
-        - --remove --entry=Reset_Handler
+        - --remove 
+        - --entry=Reset_Handler
         - --strict
         - --diag_suppress 6314
         - --summary_stderr
         - --info summarysizes
+        - --any_placement=first_fit        

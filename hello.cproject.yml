@@ -1,10 +1,5 @@
 project:
 
-  misc:
-    - for-compiler: AC6
-      ASM:
-        - -masm=auto
-
   groups:
     - group: Documentation
       files:
