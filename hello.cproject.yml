@@ -1,10 +1,5 @@
 project:
 
-  misc:
-    - for-compiler: AC6
-      ASM:
-        - -masm=auto
-
   groups:
     - group: Documentation
       files:
@@ -29,9 +24,3 @@ project:
     - component: Device&STM32CubeMX:Startup
     - component: Keil::Device&STM32CubeMX:STM32Cube Framework:STM32CubeMX
     - component: Keil::Device&STM32CubeMX:STM32Cube HAL
-  
-
-  output:
-    type:
-      - elf
-      - hex

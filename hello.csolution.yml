@@ -1,7 +1,8 @@
 solution:
   description: Simple Hello World example for NUCLEO-G474RE
-  created-for: CMSIS-Toolbox@2.0.0
+  created-for: CMSIS-Toolbox@2.6.0
   compiler: AC6
+  cdefault:
 
   packs:
     - pack: ARM::CMSIS
@@ -17,7 +18,7 @@ solution:
   build-types:
     - type: Debug
       debug: on
-      optimize: none
+      optimize: debug
 
     - type: Release
       debug: off

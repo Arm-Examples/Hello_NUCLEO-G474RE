@@ -1,4 +1,5 @@
 cbuild-set:
-  generated-by: csolution version 2.4.0-devint1
+  generated-by: csolution version 2.6.0
   contexts:
+    - context: hello.Release+NUCLEO-G474RE
     - context: hello.Debug+NUCLEO-G474RE
