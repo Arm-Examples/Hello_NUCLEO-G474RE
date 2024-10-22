@@ -2,7 +2,7 @@ solution:
   description: Simple Hello World example for NUCLEO-G474RE
   created-for: CMSIS-Toolbox@2.6.0
   compiler: AC6
-  cdefault: ./cdefault.yml
+  cdefault:
 
   packs:
     - pack: ARM::CMSIS
