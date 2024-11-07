@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2023 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2023-2024 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -20,11 +20,10 @@
 #include "main.h"
 #include "cmsis_os2.h"
 
-/*---------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
  * Application main thread
- *---------------------------------------------------------------------------*/
-
-static void app_main (void *argument) {
+ *----------------------------------------------------------------------------*/
+static void app_main_thread (void *argument) {
   (void)argument;
 
   for(int count = 0; count < 10; count++) {
@@ -34,9 +33,12 @@ static void app_main (void *argument) {
   osDelay(osWaitForever);
 }
 
-/*---------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
  * Application initialization
- *---------------------------------------------------------------------------*/
-void app_initialize (void) {
-  osThreadNew(app_main, NULL, NULL);
+ *----------------------------------------------------------------------------*/
+int app_main (void) {
+  osKernelInitialize();                         /* Initialize CMSIS-RTOS2 */
+  osThreadNew(app_main_thread, NULL, NULL);
+  osKernelStart();                              /* Start thread execution */
+  return 0;
 }

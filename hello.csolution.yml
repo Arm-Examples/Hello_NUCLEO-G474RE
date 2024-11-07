@@ -1,9 +1,15 @@
+# A solution is a collection of related projects that share same base configuration.
 solution:
   description: Simple Hello World example for NUCLEO-G474RE
   created-for: CMSIS-Toolbox@2.6.0
-  compiler: AC6
   cdefault:
 
+  # List of tested compilers that can be selected
+  select-compiler:
+    - compiler: AC6
+  compiler: AC6
+
+  # List the packs that define the device and/or board.
   packs:
     - pack: ARM::CMSIS
     - pack: ARM::CMSIS-RTX
@@ -11,10 +17,12 @@ solution:
     - pack: Keil::STM32G4xx_DFP
     - pack: Keil::NUCLEO-G474RE_BSP
 
+  # List different hardware targets that are used to deploy the solution.
   target-types:
     - type: NUCLEO-G474RE
       board: STMicroelectronics::NUCLEO-G474RE:Rev.C
 
+  # List of different build configurations.
   build-types:
     - type: Debug
       debug: on
@@ -24,5 +32,6 @@ solution:
       debug: off
       optimize: balanced
 
+  # List related projects.
   projects:
     - project: ./hello.cproject.yml

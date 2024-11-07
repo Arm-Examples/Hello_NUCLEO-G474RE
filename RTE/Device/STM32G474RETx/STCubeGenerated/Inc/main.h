@@ -53,7 +53,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-extern void app_initialize (void);
+extern int app_main (void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
