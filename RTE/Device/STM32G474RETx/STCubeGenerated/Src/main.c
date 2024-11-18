@@ -67,7 +67,7 @@ uint32_t HAL_GetTick (void) {
     return ((uint32_t)osKernelGetTickCount());
   }
 
-  /* If Kernel is not running wait approximately 1 ms then increment 
+  /* If Kernel is not running wait approximately 1 ms then increment
      and return auxiliary tick counter value */
   for (i = (SystemCoreClock >> 14U); i > 0U; i--) {
     __NOP(); __NOP(); __NOP(); __NOP(); __NOP(); __NOP();
@@ -80,7 +80,7 @@ uint32_t HAL_GetTick (void) {
   * Override default HAL_InitTick function
   */
 HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority) {
-  
+
   UNUSED(TickPriority);
 
   return HAL_OK;
@@ -118,9 +118,7 @@ int main(void)
   MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  osKernelInitialize();                         /* Initialize CMSIS-RTOS2 */
-  app_initialize();                             /* Initialize application */
-  osKernelStart();                              /* Start thread execution */
+    app_main();                           /* Execute Application main */
 
   /* USER CODE END 2 */
 

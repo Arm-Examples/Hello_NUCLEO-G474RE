@@ -1,5 +1,19 @@
+# A project translates into one executable or library.
 project:
 
+  # List components to use for your application.
+  # A software component is a re-usable unit that may be configurable.
+  components:
+    - component: CMSIS:CORE
+    - component: CMSIS:RTOS2:Keil RTX5&Source
+    - component: CMSIS-Compiler:CORE
+    - component: CMSIS-Compiler:STDOUT:Custom
+    - component: CMSIS:OS Tick:SysTick
+    - component: Device&STM32CubeMX:Startup
+    - component: Keil::Device&STM32CubeMX:STM32Cube Framework:STM32CubeMX
+    - component: Keil::Device&STM32CubeMX:STM32Cube HAL
+
+  # List of source groups and files added to a project or a layer.
   groups:
     - group: Documentation
       files:
@@ -15,12 +29,4 @@ project:
     - script: RTE/Device/STM32G474RETx/stm32g474.sct
       for-compiler: AC6
 
-  components:
-    - component: CMSIS:CORE
-    - component: CMSIS:RTOS2:Keil RTX5&Source
-    - component: CMSIS-Compiler:CORE
-    - component: CMSIS-Compiler:STDOUT:Custom
-    - component: CMSIS:OS Tick:SysTick
-    - component: Device&STM32CubeMX:Startup
-    - component: Keil::Device&STM32CubeMX:STM32Cube Framework:STM32CubeMX
-    - component: Keil::Device&STM32CubeMX:STM32Cube HAL
+

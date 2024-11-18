@@ -15,10 +15,10 @@
  */
 #define CMSIS_device_header "stm32g4xx.h"
 
-/* ARM::CMSIS-Compiler:STDOUT:Custom@1.0.0 */
+/* ARM::CMSIS-Compiler:STDOUT:Custom@1.1.0 */
 #define RTE_CMSIS_Compiler_STDOUT                /* CMSIS-Compiler STDOUT */
 #define RTE_CMSIS_Compiler_STDOUT_Custom         /* CMSIS-Compiler STDOUT: Custom */
-/* ARM::CMSIS:RTOS2:Keil RTX5&Source@5.8.0 */
+/* ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.0 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
 #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
 #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
@@ -26,7 +26,6 @@
 #define RTE_DEVICE_FRAMEWORK_CUBE_MX
 /* Keil::Device&STM32CubeMX:STM32Cube HAL@1.4.0 */
 #define RTE_DEVICE_CUBE_MX_HAL
-/* Keil.STM32CubeMX::Device:Startup@1.4.0 */
-#define RTE_DEVICE_STARTUP_STM32G4XX    /* Device Startup for STM32G4 */
+
 
 #endif /* RTE_COMPONENTS_H */
