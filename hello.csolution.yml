@@ -1,7 +1,7 @@
 # A solution is a collection of related projects that share same base configuration.
 solution:
   description: Simple Hello World example for NUCLEO-G474RE
-  created-for: CMSIS-Toolbox@2.6.0
+  created-for: CMSIS-Toolbox@2.9.0
   cdefault:
 
   # List of tested compilers that can be selected
@@ -21,6 +21,12 @@ solution:
   target-types:
     - type: NUCLEO-G474RE
       board: STMicroelectronics::NUCLEO-G474RE:Rev.C
+      target-set:
+        - set:
+          debugger:
+            name: ST-LINK
+          images:
+            - project-context: hello.Debug
 
   # List of different build configurations.
   build-types:
@@ -31,6 +37,15 @@ solution:
     - type: Release
       debug: off
       optimize: balanced
+
+  misc:
+    - for-compiler: AC6
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
+      Link:
+        - --entry=Reset_Handler
 
   # List related projects.
   projects:

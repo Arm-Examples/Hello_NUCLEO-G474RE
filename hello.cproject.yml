@@ -29,4 +29,8 @@ project:
     - script: RTE/Device/STM32G474RETx/stm32g474.sct
       for-compiler: AC6
 
-
+  output:
+    type:
+      - elf
+      - hex
+      - map

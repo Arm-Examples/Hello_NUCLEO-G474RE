@@ -1,4 +1,4 @@
 cbuild-set:
-  generated-by: csolution version 2.6.0
+  generated-by: vscode-cmsis-csolution version 1.54.0
   contexts:
-    - context: hello.Release+NUCLEO-G474RE
+    - context: hello.Debug+NUCLEO-G474RE
