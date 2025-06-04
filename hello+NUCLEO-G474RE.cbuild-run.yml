@@ -5,7 +5,7 @@ cbuild-run:
   target-set: <default>
   compiler: AC6
   board: STMicroelectronics::NUCLEO-G474RE:Rev.C
-  board-pack: Keil::NUCLEO-G474RE_BSP@1.0.0
+  board-pack: Keil::NUCLEO-G474RE_BSP@2.0.0
   device: STMicroelectronics::STM32G474RETx
   device-pack: Keil::STM32G4xx_DFP@1.5.0
   output:
