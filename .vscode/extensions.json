@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "arm.keil-studio-pack",
-        "arm.vscode-cmsis-debugger"
+        "arm.keil-studio-pack"
     ]
 }
