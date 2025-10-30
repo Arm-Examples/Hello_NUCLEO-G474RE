@@ -24,7 +24,10 @@ solution:
       target-set:
         - set:
           debugger:
-            name: ST-LINK
+            name: ST-Link@pyOCD
+            port: 3333
+            protocol: swd
+            clock: 10000000
           images:
             - project-context: hello.Debug
 
