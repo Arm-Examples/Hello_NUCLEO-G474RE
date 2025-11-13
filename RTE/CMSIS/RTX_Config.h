@@ -230,7 +230,7 @@
 //     <1=> Privileged mode
 //   <i> Default: Unprivileged mode
 #ifndef OS_PRIVILEGE_MODE
-#define OS_PRIVILEGE_MODE           0
+#define OS_PRIVILEGE_MODE           1
 #endif
  
 // </h>

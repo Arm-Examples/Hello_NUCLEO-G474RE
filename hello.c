@@ -1,5 +1,6 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2023-2025 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2023-2025 Arm Limited (or its affiliates).
+ * All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -16,9 +17,9 @@
  * limitations under the License.
  *---------------------------------------------------------------------------*/
 
-#include <stdio.h>
-#include "main.h"
 #include "cmsis_os2.h"
+#include "main.h"
+#include <stdio.h>
 
 // Create thread attribute to show thread name in the XRTOS viewer:
 const osThreadAttr_t app_main_attr = {.name = "MainThread"};
