@@ -1,32 +1,41 @@
 # A solution is a collection of related projects that share same base configuration.
 solution:
-  description: Simple Hello World example for NUCLEO-G474RE
-  created-for: CMSIS-Toolbox@2.9.0
+  created-for: CMSIS-Toolbox@2.12.0
   cdefault:
 
   # List of tested compilers that can be selected
   select-compiler:
     - compiler: AC6
-  compiler: AC6
+
+  # Miscellaneous toolchain controls directly passed to the tools
+  misc:
+    - for-compiler: AC6 # change to -gdwarf-4 for debugging using uVision
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
 
   # List the packs that define the device and/or board.
   packs:
+    - pack: Keil::STM32G4xx_DFP
+    - pack: Keil::NUCLEO-G474RE_BSP
+    - pack: ARM::CMSIS-Driver_STM32
     - pack: ARM::CMSIS
     - pack: ARM::CMSIS-RTX
     - pack: ARM::CMSIS-Compiler
-    - pack: Keil::STM32G4xx_DFP
-    - pack: Keil::NUCLEO-G474RE_BSP
 
   # List different hardware targets that are used to deploy the solution.
   target-types:
     - type: NUCLEO-G474RE
-      board: STMicroelectronics::NUCLEO-G474RE:Rev.C
+      board: STMicroelectronics::NUCLEO-G474RE
+      device: STMicroelectronics::STM32G474RETx
       target-set:
         - set:
-          debugger:
-            name: ST-LINK
           images:
             - project-context: hello.Debug
+          debugger:
+            name: ST-Link@pyOCD
+            protocol: swd
 
   # List of different build configurations.
   build-types:
@@ -38,15 +47,7 @@ solution:
       debug: off
       optimize: balanced
 
-  misc:
-    - for-compiler: AC6
-      C-CPP:
-        - -gdwarf-5
-      ASM:
-        - -gdwarf-5
-      Link:
-        - --entry=Reset_Handler
-
   # List related projects.
   projects:
-    - project: ./hello.cproject.yml
+    - project: hello.cproject.yml
+  compiler: AC6

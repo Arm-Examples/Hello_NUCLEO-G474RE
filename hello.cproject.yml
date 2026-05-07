@@ -1,34 +1,47 @@
 # A project translates into one executable or library.
 project:
 
+  # Project define
+  define:
+    - OS_IDLE_THREAD_NAME: \"Idle\"
+    - OS_TIMER_THREAD_NAME: \"Timer\"
+
   # List components to use for your application.
   # A software component is a re-usable unit that may be configurable.
   components:
+    - component: Device:CubeMX
+
     - component: CMSIS:CORE
-    - component: CMSIS:RTOS2:Keil RTX5&Source
-    - component: CMSIS-Compiler:CORE
-    - component: CMSIS-Compiler:STDOUT:Custom
+
     - component: CMSIS:OS Tick:SysTick
-    - component: Device&STM32CubeMX:Startup
-    - component: Keil::Device&STM32CubeMX:STM32Cube Framework:STM32CubeMX
-    - component: Keil::Device&STM32CubeMX:STM32Cube HAL
+    - component: CMSIS:RTOS2:Keil RTX5&Source
+
+    - component: CMSIS-Compiler:CORE
+    - component: CMSIS-Compiler:STDIN:Custom
+    - component: CMSIS-Compiler:STDOUT:Custom
+    - component: CMSIS-Compiler:STDERR:Custom
+
+    - component: CMSIS Driver:GPIO
+    - component: CMSIS Driver:USART
 
   # List of source groups and files added to a project or a layer.
   groups:
     - group: Documentation
       files:
         - file: README.md
-    - group: Application
+    - group: Source Files
       files:
         - file: hello.c
-    - group: Board
-      files:
         - file: retarget_stdio.c
+          define:
+            - RETARGET_STDIO_UART: 21
 
   linker:
-    - script: RTE/Device/STM32G474RETx/stm32g474.sct
+    - script:  ./RTE/Device/STM32G474RETx/ac6_linker_script.sct.src
+      regions: ./RTE/Device/STM32G474RETx/regions_NUCLEO-G474RE.h
       for-compiler: AC6
 
+  # List executable file formats to be generated.
   output:
     type:
       - elf
